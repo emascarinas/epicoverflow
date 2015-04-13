@@ -21,7 +21,7 @@ angular
             site: 'stackoverflow',
             itemsPerPage: 20,
             itemsSmallPerPage: 5,
-            pageMaxSize: 5,
+            pageMaxSize: 5, //for navigator number of page number shown
             filterAddTotal: '!9YdnSQVoS',
             userBase: 'users',
             questionBase: 'questions',

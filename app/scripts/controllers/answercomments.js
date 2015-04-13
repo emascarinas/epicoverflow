@@ -1,6 +1,6 @@
 'use strict';
 angular.module('epicoverflowApp')
-        .controller('AnswerCommentsCtrl', function($scope, question, config, util, $attrs) {
+        .controller('AnswerCommentsCtrl', function($scope, question, config, util) {
             $scope.currentPage = 1;
             $scope.maxSize = config.pageMaxSize;
             $scope.itemsPerPage = config.itemsSmallPerPage;
@@ -9,7 +9,7 @@ angular.module('epicoverflowApp')
             };
             fetch();
             function fetch() {
-                question.getAnswerComments($attrs.answerId, $scope.currentPage).success(function(data) {
+                question.getAnswerComments($scope.answer.answer_id, $scope.currentPage, config.itemsSmallPerPage).success(function(data) {
                     $scope.response = data;
                     $scope.totalItems = data.total;
                 }).error(function(data) {

@@ -20,7 +20,7 @@ angular.module('epicoverflowApp')
             };
             
             function fetch() {
-                question.getComments($scope.currentPage).success(function(data) {
+                question.getComments($scope.currentPage, config.itemsSmallPerPage).success(function(data) {
                     $scope.response = data;
                     $scope.totalItems = data.total;
                 }).error(function(data) {

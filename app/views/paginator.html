@@ -1,4 +1,5 @@
-<div class="bz-pagination">
+{{param}}
+<div class="bz-pagination" ng-show="numPages > 1">
     <div>Page: {{currentPage}} / {{numPages}}</div>
     <div><pagination items-per-page="{{itemsPerPage}}" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination></div>
 </div>
