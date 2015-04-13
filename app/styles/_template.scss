@@ -1,0 +1,129 @@
+.bz-badges {
+    .btn {
+        margin: 5px;
+    }
+}
+.bz-table {
+    .row {
+        border-bottom: 1px solid #{$border};
+        padding: 12px 0;
+        .btn {
+            margin: 5px;
+        }
+        .bz-vote{
+            span:nth-child(1) {
+                width: 57px;
+                display: inline-block;
+            }
+            div {
+                text-align: center;
+            }
+        }
+        &:nth-child(even){
+            /*background-color: #F9F9F9;*/
+        }
+        &:nth-child(odd){
+            /*background-color: #fff;*/            
+        }        
+    }
+}
+.bz-pagination {
+    > div {
+        float: right;
+        &:nth-child(1){
+            margin: 20px 0 20px 10px;
+        }
+    }
+}
+#bz-answer{
+    h2 {
+        margin-bottom: 20px;
+    }
+    .bz-answer-body-wrap{
+        border-bottom: 1px solid #{$border-dark};
+        margin-bottom: 20px;
+        .panel.panel-primary {
+            text-align: center;
+        }
+    }
+}
+
+div.tab-pane {
+    margin-top: 20px;
+}
+.bz-profile-image {
+    text-align: center;
+}
+.bz-success {
+    background-color: #5cb85c!important;
+}
+
+/* Blizzard skin */
+.header {
+    border-bottom: none;
+}
+
+.bz-container {
+    margin-top: 85px;
+    min-height: 300px;
+}
+
+.bz-footer-logo {
+    background: url(#{$imgPath}images/sprite.png) no-repeat 0px 0px;
+width: 102px;
+height: 53px;
+display: block;
+margin: 0 auto;
+}
+.navbar.navbar-default.navbar-fixed-top {
+    border-color: #{$border}; 
+    background-color: #0f2a48;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+    .container {
+        .navbar-header {
+            padding-bottom: 18px;
+        }
+        padding-top: 14px;
+    }
+    .navbar-brand {
+        background: url(#{$imgPath}images/logo.png)no-repeat;
+    display: block;
+    padding-left: 60px;
+    font-size: 23px;
+}
+a {
+    color: #fff!important;
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+}
+.modal-content {
+    background-color: #475059;
+    color: white;
+    .modal-header, .modal-footer {
+        border: none;
+    }  
+}
+.bz-comment {
+    .bz-row {
+        margin-left: 30px;
+        border-bottom: 1px solid #{$border-dark};
+        padding: 7px 0;
+        > .col-md-1 {
+            text-align: center;
+        }
+        .col-md-11 {
+            span {
+                padding-right: 10px;
+                &:nth-child(3) {
+                    font-style: italic;
+                }
+            }
+        }
+
+    }
+}
+
+

@@ -1,0 +1,8 @@
+<div class="bz-comment">
+    <h2>Comments</h2>
+    <div class="bz-row row" ng-repeat="comment in response.items">
+        <div class="col-md-1"><span ng-show="comment.score">Votes <span class="badge">{{comment.score}}</span></span></div>
+        <div class="col-md-11"><span ng-bind="comment.body | bzSanitize"></span> –&nbsp; <span class="text-warning">{{comment.owner.display_name}}</span><span>{{comment.creation_date * 1000| date:'medium'}}</span></div>
+    </div>
+    <bz-paginator></bz-paginator>
+</div>
