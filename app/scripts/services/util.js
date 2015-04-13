@@ -3,7 +3,7 @@
 angular.module('epicoverflowApp')
         .service('util', function (config, $modal, session) {
             this.getParam = function (type, resource, param, isAuth, id) {
-                var path = config.apiUrl + type + '/';
+                var path = config.apiUrl + type + ('me' === type ? '' : '/');
                 switch (type) {
                     case 'users':
                         var uid = undefined === id ? session.getProfile().user_id : id; // jshint ignore:line
@@ -35,6 +35,6 @@ angular.module('epicoverflowApp')
                 });
             };
             this.isAuth = function(){
-                return undefined === session.getAccessToken()
-            }
+                return undefined !== session.getAccessToken();
+            };
         });

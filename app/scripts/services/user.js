@@ -13,19 +13,19 @@ angular.module('epicoverflowApp')
                     return $http.get(param);
                 },
                 getBadges: function(page) {
-                    var param = util.getParam( util.isAuth() ? config.userBase : config.meBase,'/badges?',{page: page, sort: 'rank'},util.isAuth());
+                    var param = util.getParam( util.isAuth() ? config.meBase : config.userBase,'/badges?',{page: page, sort: 'rank'},util.isAuth());
                     return $http.get(param);
                 },
                 getTimeline: function(page) {
-                    var param = util.getParam(util.isAuth() ? config.userBase : config.meBase,'/timeline?',{page: page}, util.isAuth());
+                    var param = util.getParam(util.isAuth() ? config.meBase : config.userBase,'/timeline?',{page: page}, util.isAuth());
                     return $http.get(param);
                 },
                 getFavorites: function(page) {
-                    var param = util.getParam(util.isAuth() ? config.userBase : config.meBase,'/favorites?',{page: page}, util.isAuth());
+                    var param = util.getParam(util.isAuth() ? config.meBase : config.userBase,'/favorites?',{page: page}, util.isAuth());
                     return $http.get(param);
                 },
                 getTags: function(page) {
-                    var param = util.getParam(util.isAuth() ? config.userBase : config.meBase,'/tags?',{page: page}, util.isAuth());
+                    var param = util.getParam(util.isAuth() ? config.meBase : config.userBase,'/tags?',{page: page}, util.isAuth());
                     return $http.get(param);
                 }
             };

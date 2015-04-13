@@ -11,7 +11,7 @@ describe('Controller: Badge', function() {
     afterEachShared();
 
     it('should fetch successfully', inject(function($timeout, session, getProfile) {
-        var x = config.apiUrl + 'users/' + getProfile.items[0].user_id + '/badges?page=1&sort=rank&pagesize=20&filter=' + config.filterAddTotal + '&site=stackoverflow';
+        var x = config.apiUrl + 'users/' + getProfile.items[0].user_id + '/badges?page=1&sort=rank&pagesize=20&filter=!9YdnSQVoS&site=stackoverflow';
         console.log(x);
         $httpBackend.whenGET(x).respond(getProfile);
         controller();
