@@ -2,7 +2,7 @@
     <h1>{{questionResponse.title}}</h1>
     <div class="bz-question-body-wrap">
         <div class="fav col-md-1">
-            <a href="#" ng-click="flag()"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></a>
+            <span ng-class="questionResponse.favorited ? 'yellow' : 'gray'" ng-click="flag(questionResponse.favorited)" class="glyphicon glyphicon-star" aria-hidden="true"></span>
         </div>
         <div class="col-md-11">
             <div class="bz-question-body" ng-bind-html="questionResponse.body | bzSanitize"></div>

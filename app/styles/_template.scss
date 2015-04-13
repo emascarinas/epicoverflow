@@ -125,5 +125,15 @@ a {
 
     }
 }
-
+#bz-question {
+    .glyphicon-star {
+        font-size: 30px;
+        &.gray {
+            color:#C0C0C0;
+        }
+        &.yellow {
+            color:#FFD83D;
+        }
+    }
+}
 

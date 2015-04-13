@@ -4,8 +4,13 @@ angular.module('epicoverflowApp')
         .controller('QuestionCtrl', function ($scope, question, util, config) {
             question.getQuestion().success(function (data) {
                 $scope.questionResponse = data.items[0];
-                $scope.flag = function () {
-                    
+                $scope.flag = function (fav) {
+                    if (fav) {
+                        question.unFlagFavorite();
+                    }
+                    else {
+                        question.flagFavorite();
+                    }
                 };
                 fetch();
             }).error(function (data) {
