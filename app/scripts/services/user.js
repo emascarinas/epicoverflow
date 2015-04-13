@@ -9,23 +9,23 @@ angular.module('epicoverflowApp')
                     return $http.post(config.curlUrl, {url: url, param: param});
                 },
                 getProfile: function(id) {
-                    var param = util.getParam(undefined === id ? config.meBase : config.userBase,'?',{},id);
+                    var param = util.getParam(undefined === id ? config.meBase : config.userBase,'?',{},util.isAuth(),id);
                     return $http.get(param);
                 },
                 getBadges: function(page) {
-                    var param = util.getParam(undefined === session.getAccessToken() ? config.userBase : config.meBase,'/badges?',{page: page, sort: 'rank'});
+                    var param = util.getParam( util.isAuth() ? config.userBase : config.meBase,'/badges?',{page: page, sort: 'rank'},util.isAuth());
                     return $http.get(param);
                 },
                 getTimeline: function(page) {
-                    var param = util.getParam(undefined === session.getAccessToken() ? config.userBase : config.meBase,'/timeline?',{page: page});
+                    var param = util.getParam(util.isAuth() ? config.userBase : config.meBase,'/timeline?',{page: page}, util.isAuth());
                     return $http.get(param);
                 },
                 getFavorites: function(page) {
-                    var param = util.getParam(undefined === session.getAccessToken() ? config.userBase : config.meBase,'/favorites?',{page: page});
+                    var param = util.getParam(util.isAuth() ? config.userBase : config.meBase,'/favorites?',{page: page}, util.isAuth());
                     return $http.get(param);
                 },
                 getTags: function(page) {
-                    var param = util.getParam(undefined === session.getAccessToken() ? config.userBase : config.meBase,'/tags?',{page: page});
+                    var param = util.getParam(util.isAuth() ? config.userBase : config.meBase,'/tags?',{page: page}, util.isAuth());
                     return $http.get(param);
                 }
             };
