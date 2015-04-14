@@ -1,7 +1,8 @@
 'use strict';
 angular.module('epicoverflowApp')
         .service('util', function(config, $modal, session, $http) {
-            this.getParam = function(type, resource, param, isAuth, id) {
+            var self = this;
+            this.getParam = function(type, resource, param, id) {
                 var path = config.apiUrl + type + ('me' === type ? '' : '/');
                 switch (type) {
                     case 'users':
@@ -11,7 +12,7 @@ angular.module('epicoverflowApp')
                     default:
                         path += resource;
                 }
-                if (true === isAuth) {
+                if (true === self.isAuth()) {
                     param.key = config.key;
                     param.access_token = session.getAccessToken(); // jshint ignore:line    
                 }

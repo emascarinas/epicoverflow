@@ -7,14 +7,14 @@ angular.module('epicoverflowApp')
                 $scope.flag = function(fav) {
                     if (fav) {
                         question.unFlagFavorite().success(function(data) {
-                            console.log(data);
+                            $scope.questionResponse.favorited = data.items[0].favorited;
                         }).error(function(data) {
                             util.showError(data);
                         });
                     }
                     else {
                         question.flagFavorite().success(function(data) {
-                            console.log(data);
+                            $scope.questionResponse.favorited = data.items[0].favorited;
                         }).error(function(data) {
                             util.showError(data);
                         });

@@ -1,20 +1,43 @@
 <div id="bz-search">
     <h1>Open questions <span class="text-success">{{tagged}}</span></h1>
-    <div class="bz-table">
-        <div class="row" ng-repeat="question in response.items">
-            <div class="col-md-1 bz-vote">
-                <div><span>Votes</span> <span class="badge">{{question.score}}</span></div>
-                <div><span>Views</span> <span class="badge">{{question.view_count}}</span></div>
-                <div><span>Answers</span> <span class="badge" ng-class="question.answer_count ? 'bz-success' : ''">{{question.answer_count}}</span></div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="bz-sort-panel row">
+                <div class="col-md-8">
+                    <h4>Sort By</h4>
+                    <div class="bz-sort">
+                        <button ng-repeat="sort in sortList" type="button" ng-click="setSort(sort.value)" class="btn" ng-class="currentSort === sort.value ? 'btn-warning' : 'btn - default'">{{sort.display}}</button>
+                    </div>        
+                </div>
+                <div class="col-md-4">
+                    <h4>Order By</h4>
+                    <div class="bz-order">
+                        <button ng-repeat="order in orderList" type="button" ng-click="setOrder(order.value)" class="btn" ng-class="currentOrder === order.value ? 'btn-warning' : 'btn-default'">{{order.display}}</button>
+                    </div>        
+                </div>
             </div>
-            <div class="col-md-6"><a ng-href="#/question?id={{question.question_id}}">{{question.title}}</a></div>
-            <div class="col-md-2">{{question.creation_date * 1000| date : 'mediumDate'}}</div>
-            <div class="col-md-3">
-                <a ng-href="#/questions?tag={{tag}}" ng-repeat="tag in question.tags" class="btn btn-success" type="button">
-                    {{tag}}
-                </a>
+
+            <div class="bz-table">
+                <div class="row" ng-repeat="question in response.items">
+                    <div class="col-md-1 bz-vote">
+                        <div><span>Votes</span> <span class="badge">{{question.score}}</span></div>
+                        <div><span>Views</span> <span class="badge">{{question.view_count}}</span></div>
+                        <div><span>Answers</span> <span class="badge" ng-class="question.answer_count ? 'bz-success' : ''">{{question.answer_count}}</span></div>
+                    </div>
+                    <div class="col-md-6"><a ng-href="#/question?id={{question.question_id}}">{{question.title}}</a></div>
+                    <div class="col-md-2">{{question.creation_date * 1000| date : 'mediumDate'}}</div>
+                    <div class="col-md-3">
+                        <a ng-href="#/questions?tag={{tag}}" ng-repeat="tag in question.tags" class="btn btn-success" type="button">
+                            {{tag}}
+                        </a>
+                    </div>
+                </div>
+                <bz-paginator></bz-paginator>
             </div>
         </div>
-        <bz-paginator></bz-paginator>
+        <div class="col-md-3">
+            <h4>Tag Cloud</h4>
+        </div>
+
     </div>
 </div>
