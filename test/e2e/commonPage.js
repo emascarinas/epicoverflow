@@ -6,37 +6,8 @@ module.exports = function () {
     browser.addMockModule('mockedData', mockedData);
     var self = this;
 
-    this.gotoLoginPage = function () {
-        browser.get('/#/app/login');
-    };
-    this.gotoAddAccountPage = function () {
-        browser.get('/#/app/add-account');
-    };
-    this.clickSideMenu = function () {
-        var btn = element.all(by.css('.left-buttons button')).get(0).getWebElement();
-        browser.executeScript("arguments[0].click()", btn);
-    };
-    this.clickInvoice = function () {
-        self.clickByCss('#account-summary .ion-document-text');
-    };
-    this.clickRegister = function () {
-        self.clickByCss('#login a.btn-register');
-    };
-    this.clickForgotPassword = function () {
-        //self.clickByCss('#login a'); 
-        element(by.id('forgotPasswordLink')).click();
-    };
-    this.clickRegisterSubmit = function () {
-        self.clickByCss('#register form button');
-    };
     this.getMockedData = function (value) {
         return browser.executeScript('return angular.injector(["mockedData"]).get("' + value + '")');
-    };
-    this.clickRenew = function () {
-        self.clickByCss('#account-summary .ion-refresh');
-    };
-    this.clickPayment = function () {
-        self.clickByCss('#account-summary .ion-social-usd');
     };
     this.assertTextFromDataSet = function (locator, mockValue, mockField) {
         var elem = self.byCss(locator);
