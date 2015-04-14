@@ -1,1 +1,1 @@
-# epicoverflow [![Build Status](https://travis-ci.org/emascarinas/epicoverflow.svg?branch=master)](https://travis-ci.org/emascarinas/epicoverflow)
+# epicoverflow [![Build Status](https://travis-ci.org/emascarinas/epicoverflow.svg?branch=master)](https://travis-ci.org/emascarinas/epicoverflow) [![Coverage Status](https://coveralls.io/repos/emascarinas/epicoverflow/badge.svg)](https://coveralls.io/r/emascarinas/epicoverflow)
