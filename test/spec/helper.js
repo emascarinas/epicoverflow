@@ -11,6 +11,7 @@ beforeEachShared = function () {
         $templateCache.put('views/main.html', '');
         $templateCache.put('views/questions.html', '');
         $templateCache.put('veiws/question.html', '');
+        $templateCache.put('erroModal.html', '');
         config = _config_;
     }));
 };
