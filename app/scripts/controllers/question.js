@@ -1,19 +1,27 @@
 'use strict';
 
 angular.module('epicoverflowApp')
-        .controller('QuestionCtrl', function ($scope, question, util, config) {
-            question.getQuestion().success(function (data) {
+        .controller('QuestionCtrl', function($scope, question, util, config) {
+            question.getQuestion().success(function(data) {
                 $scope.questionResponse = data.items[0];
-                $scope.flag = function (fav) {
+                $scope.flag = function(fav) {
                     if (fav) {
-                        question.unFlagFavorite();
+                        question.unFlagFavorite().success(function(data) {
+                            console.log(data);
+                        }).error(function(data) {
+                            util.showError(data);
+                        });
                     }
                     else {
-                        question.flagFavorite();
+                        question.flagFavorite().success(function(data) {
+                            console.log(data);
+                        }).error(function(data) {
+                            util.showError(data);
+                        });
                     }
                 };
                 fetch();
-            }).error(function (data) {
+            }).error(function(data) {
                 util.showError(data);
             });
 
@@ -21,15 +29,15 @@ angular.module('epicoverflowApp')
             $scope.maxSize = config.pageMaxSize;
             $scope.itemsPerPage = config.itemsSmallPerPage;
 
-            $scope.pageChanged = function () {
+            $scope.pageChanged = function() {
                 fetch();
             };
 
             function fetch() {
-                question.getComments($scope.currentPage, config.itemsSmallPerPage).success(function (data) {
+                question.getComments($scope.currentPage, config.itemsSmallPerPage).success(function(data) {
                     $scope.response = data;
                     $scope.totalItems = data.total;
-                }).error(function (data) {
+                }).error(function(data) {
                     util.showError(data);
                 });
 //                $scope.response = question.getComments($scope.currentPage);
