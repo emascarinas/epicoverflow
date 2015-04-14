@@ -1,22 +1,22 @@
 'use strict';
 
 angular.module('epicoverflowApp')
-        .controller('MainCtrl', function ($scope, session, config, user, $routeParams, $location, util) {
+        .controller('MainCtrl', function($scope, session, config, user, $routeParams, $location, util) {
             var re = new RegExp('code=(.*)#\/');
             var code = $location.absUrl().match(re);
             $scope.session = session;
             function fetchById(id) {
-                user.getProfile(id).success(function (data) {
+                user.getProfile(id).success(function(data) {
                     session.setProfile(data.items[0]);
-                }).error(function (data) {
+                }).error(function(data) {
                     util.showError(data);
                 });
             }
             function fetch() {
                 if (undefined === session.getProfile()) {
-                    user.getProfile().success(function (data) {
+                    user.getProfile().success(function(data) {
                         session.setProfile(data.items[0]);
-                    }).error(function (data) {
+                    }).error(function(data) {
                         util.showError(data);
                     });
                 }
@@ -36,10 +36,10 @@ angular.module('epicoverflowApp')
                     session.setCode(code[1]);
                 }
                 if (undefined === session.getProfile()) { // get access token for {me}
-                    user.getCodePost().success(function (data) {
+                    user.getCodePost().success(function(data) {
                         session.setAccessToken(data.split('&')[0].split('=')[1]);
                         fetch();
-                    }).error(function (data) {
+                    }).error(function(data) {
                         util.showError(data);
                     });
                 }

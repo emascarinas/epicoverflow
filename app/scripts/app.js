@@ -13,6 +13,7 @@ angular
             key: 'Vra)L3fu19Zuq8IW7XyUMw((',
             scope: 'read_inbox,write_access,private_info',
             redirectUri: 'http://dunggoanan.com/emem/',
+            //redirectUri: 'http://localhost:9000/',
             //redirectUri: 'http://dunggoanan.com:9000/',
             oathUrl: 'https://stackexchange.com/oauth',
             curlUrl: 'http://dunggoanan.com/curl.php',
@@ -46,7 +47,6 @@ angular
                     .otherwise({
                         redirectTo: '/'
                     });
-            //$locationProvider.html5Mode(true);
         });
 
 
