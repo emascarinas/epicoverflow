@@ -26,8 +26,5 @@ exports.config = {
         defaultTimeoutInterval: 30000
     },
     allScriptsTimeout: 10000,
-    baseUrl: 'http://localhost:9000',
-    onPrepare: function() {
-        browser.driver.manage().window().maximize();
-    }
+    baseUrl: 'http://localhost:9000'
 };
