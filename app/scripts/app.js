@@ -27,6 +27,7 @@ angular
             userBase: 'users',
             questionBase: 'questions',
             meBase: 'me',
+            tagBase: 'tags',
             answerBase: 'answers'
         })
         .config(function($routeProvider) {

@@ -56,21 +56,13 @@
                     <div class="col-md-1 bz-vote"><div><span>Votes</span> <span class="badge">{{fav.score}}</span></div></div>
                     <div class="col-md-1 bz-vote"><div><span>Views</span> <span class="badge">{{fav.view_count}}</span></div></div>
                     <div class="col-md-1 bz-vote"><div><span>Answers</span> <span class="badge bz-success">{{fav.answer_count}}</span></div></div>
-                    <div class="col-md-9">{{fav.title}}</div>
+                    <div class="col-md-9"><a ng-href="#/question?id={{fav.question_id}}">{{fav.title}}</a></div>
                 </div>
                 <bz-paginator></bz-paginator>
             </div>
         </tab>
         <tab heading="Tag" ng-controller="TagCtrl" select="fetch()">
-            <span ng-hide="response.items.length">0 Tags</span>
-            <div class="bz-table" ng-show="response.items.length">
-                <div class="row">
-                    <a ng-repeat="tag in response.items" ng-href="#/questions?tag={{tag.name}}" class="btn btn-success" type="button">
-                        {{tag.name}} <span class="badge">{{tag.count}}</span>
-                    </a>
-                </div>
-                <bz-paginator></bz-paginator>
-            </div>
+            <bz-tags></bz-tags>
         </tab>
     </tabset>
 </div>

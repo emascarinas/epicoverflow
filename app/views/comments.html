@@ -1,4 +1,4 @@
-<div class="bz-comment">
+<div class="bz-comment" ng-show="response.items.length">
     <h2>Comments</h2>
     <div class="bz-row row" ng-repeat="comment in response.items">
         <div class="col-md-1"><span ng-show="comment.score">Votes <span class="badge">{{comment.score}}</span></span></div>

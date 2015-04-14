@@ -142,4 +142,11 @@ a {
         margin: 0 3px;
     }
 }
+.nav-tabs{
+    > li {
+        > a:hover {
+            color: rgb(85, 85, 85);
+        }
+    }
+}
 

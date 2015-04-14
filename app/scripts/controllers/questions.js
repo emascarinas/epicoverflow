@@ -13,10 +13,8 @@ angular.module('epicoverflowApp')
             $scope.currentOrder = '';
             $scope.currentSort = '';
             $scope.tagged = undefined === $routeParams.tag ? '' : ' for ' + $routeParams.tag;
-            fetch();
-            $scope.pageChanged = function() {
-                fetch();
-            };
+            $scope.maxSize = config.pageMaxSize;
+            $scope.itemsPerPage = config.itemsPerPage;
             $scope.orderList = [{display:'Default',value:''},{display:'Desc',value:'desc'},{display:'Asc',value:'asc'}];
             $scope.sortList = [{display:'Default',value:''},
                 {display:'Activity',value:'activity'},
@@ -26,7 +24,9 @@ angular.module('epicoverflowApp')
                 {display:'Week',value:'week'},
                 {display:'Month',value:'month'}
             ];
-            
+            $scope.pageChanged = function() {
+                fetch();
+            };
             $scope.setSort = function(sort){
                 $scope.currentSort = sort;
                 fetch();
@@ -35,6 +35,5 @@ angular.module('epicoverflowApp')
                 $scope.currentOrder = order;
                 fetch();
             };
-            $scope.maxSize = config.pageMaxSize;
-            $scope.itemsPerPage = config.itemsPerPage;
+            fetch();
         });

@@ -34,6 +34,15 @@ angular.module('epicoverflowApp')
                     var param = util.getParam(config.questionBase, $routeParams.id + '/answers?', {page: page, order: 'desc', sort: 'votes', filter: '!-*f(6tIDgtXe'});
                     return $http.get(param);
                 },
+                getQuestionTags: function (page,tag) {
+                    var param;
+                    if (undefined !== tag) {
+                        param = util.getParam(config.tagBase, '/'+tag+'/related?', {page: page,filter: config.filterAddTotal});
+                    }else{
+                        param = util.getParam(config.tagBase, '?', {page: page,filter: config.filterAddTotal});                        
+                    }
+                    return $http.get(param);
+                },
                 getAnswerComments: function (answerId, page, itemsPerPage) {
                     var param = util.getParam(config.answerBase, answerId + '/comments?', {pagesize: itemsPerPage, page: page, order: 'asc', filter: '!-*f(6tIDgtXe'});
                     return $http.get(param);
@@ -43,6 +52,6 @@ angular.module('epicoverflowApp')
                 },
                 unFlagFavorite: function () {
                     return util.postAuth(config.questionBase + '/' + $routeParams.id + '/favorite/undo', {filter: '!9YdnS9*GS'});
-                }
+                }                
             };
         });

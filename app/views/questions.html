@@ -6,7 +6,7 @@
                 <div class="col-md-8">
                     <h4>Sort By</h4>
                     <div class="bz-sort">
-                        <button ng-repeat="sort in sortList" type="button" ng-click="setSort(sort.value)" class="btn" ng-class="currentSort === sort.value ? 'btn-warning' : 'btn - default'">{{sort.display}}</button>
+                        <button ng-repeat="sort in sortList" type="button" ng-click="setSort(sort.value)" class="btn" ng-class="currentSort === sort.value ? 'btn-warning' : 'btn-default'">{{sort.display}}</button>
                     </div>        
                 </div>
                 <div class="col-md-4">
@@ -27,7 +27,7 @@
                     <div class="col-md-6"><a ng-href="#/question?id={{question.question_id}}">{{question.title}}</a></div>
                     <div class="col-md-2">{{question.creation_date * 1000| date : 'mediumDate'}}</div>
                     <div class="col-md-3">
-                        <a ng-href="#/questions?tag={{tag}}" ng-repeat="tag in question.tags" class="btn btn-success" type="button">
+                        <a ng-href="#/questions?tag={{tag}}" ng-repeat="tag in question.tags" class="btn btn-primary" type="button">
                             {{tag}}
                         </a>
                     </div>
@@ -35,9 +35,9 @@
                 <bz-paginator></bz-paginator>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" ng-controller="QuestionTagsCtrl">
             <h4>Tag Cloud</h4>
+            <bz-tags></bz-tags>
         </div>
-
     </div>
 </div>
