@@ -1,7 +1,6 @@
 'use strict';
-
 angular.module('epicoverflowApp')
-        .service('util', function(config, $modal, session) {
+        .service('util', function(config, $modal, session, $http) {
             this.getParam = function(type, resource, param, isAuth, id) {
                 var path = config.apiUrl + type + ('me' === type ? '' : '/');
                 switch (type) {
@@ -22,11 +21,12 @@ angular.module('epicoverflowApp')
                 param.site = config.site;
                 return path + $.param(param); // jshint ignore:line
             };
-//            this.getPostAuth = function(url, param) {
-//                param.key = config.key;
-//                param.access_token = session.getAccessToken(); // jshint ignore:line    
-//                return $http.post(url, JSON.stringify(param)); 
-//            };
+            this.postAuth = function(url, param) {
+                param.key = config.key;
+                param.access_token = session.getAccessToken(); // jshint ignore:line
+                param.site = config.site;
+                return $http.post(config.apiUrl + url, $.param(param), {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}); // jshint ignore:line
+            };
             this.showError = function(err) {
                 $modal.open({
                     templateUrl: 'erroModal.html',
