@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('epicoverflowApp')
         .directive('bzComments', function() {
             return {
