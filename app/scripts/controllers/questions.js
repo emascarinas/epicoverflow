@@ -12,7 +12,7 @@ angular.module('epicoverflowApp')
             $scope.currentPage = 1;
             $scope.currentOrder = '';
             $scope.currentSort = '';
-            $scope.tagged = undefined === $routeParams.tag ? '' : ' for ' + $routeParams.tag;
+            $scope.tagged = undefined === $routeParams.tag ? '' : $routeParams.tag;
             $scope.maxSize = config.pageMaxSize;
             $scope.itemsPerPage = config.itemsPerPage;
             $scope.boundaryLinks = true;
