@@ -36,11 +36,15 @@
                     <a class="navbar-brand" ng-click="goHome()" href="">Epic Overflow</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
+					<form class="navbar-form navbar-right" ng-submit="goSearch()">
+						<input type="text" name="tag" ng-model="tag" required class="form-control" placeholder="Search Question...">
+					</form>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a ng-click="goHome()" href="">Home</a></li>
                         <li><a href="#/questions">Open Questions</a></li>
                         <li><a href="https://stackexchange.com/users/logout">Logout</a></li>
                     </ul>
+					
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
