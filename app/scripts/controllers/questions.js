@@ -15,6 +15,9 @@ angular.module('epicoverflowApp')
             $scope.tagged = undefined === $routeParams.tag ? '' : ' for ' + $routeParams.tag;
             $scope.maxSize = config.pageMaxSize;
             $scope.itemsPerPage = config.itemsPerPage;
+            $scope.boundaryLinks = true;
+            $scope.rotate = false;
+            
             $scope.orderList = [{display:'Default',value:''},{display:'Desc',value:'desc'},{display:'Asc',value:'asc'}];
             $scope.sortList = [{display:'Default',value:''},
                 {display:'Activity',value:'activity'},

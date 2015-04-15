@@ -9,14 +9,10 @@ describe('homeSpec', function () {
         homePage = new Home();
     });
 
-    it('should go to profile page', function () {
+    it('should go to question page', function () {
         homePage.mockHomeSuccess();
-        expect(true).toBe(true);
-        //common.assertTextByCss('#login > ion-content > div > span > h3','Login to Your Account');
-    });
-    it('show go to badge page', function () {
-        homePage.mockHomeSuccess();
-        expect(true).toBe(true);
-        //common.assertTextByCss('#account-summary > ion-content > div.scroll > div > span > h3','Account Summary');
+        browser.get('/#/question?id=29638426')
+        var title = common.getMockedData('question');
+        common.assertTextByCss('#bz-question > h1',title.items[0].title);
     });
 });

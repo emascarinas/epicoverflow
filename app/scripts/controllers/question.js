@@ -2,6 +2,19 @@
 
 angular.module('epicoverflowApp')
         .controller('QuestionCtrl', function($scope, question, util, config) {
+            function fetch() {
+                question.getComments($scope.currentPage, config.itemsSmallPerPage).success(function(data) {
+                    $scope.response = data;
+                    $scope.totalItems = data.total;
+                }).error(function(data) {
+                    util.showError(data);
+                });
+            }
+
+            $scope.currentPage = 1;
+            $scope.maxSize = config.pageMaxSize;
+            $scope.itemsPerPage = config.itemsSmallPerPage;
+
             question.getQuestion().success(function(data) {
                 $scope.questionResponse = data.items[0];
                 $scope.flag = function(fav) {
@@ -24,24 +37,10 @@ angular.module('epicoverflowApp')
             }).error(function(data) {
                 util.showError(data);
             });
-
-            $scope.currentPage = 1;
-            $scope.maxSize = config.pageMaxSize;
-            $scope.itemsPerPage = config.itemsSmallPerPage;
-
+            $scope.goBack = function() {
+                window.history.back();
+            };
             $scope.pageChanged = function() {
                 fetch();
             };
-
-            function fetch() {
-                question.getComments($scope.currentPage, config.itemsSmallPerPage).success(function(data) {
-                    $scope.response = data;
-                    $scope.totalItems = data.total;
-                }).error(function(data) {
-                    util.showError(data);
-                });
-//                $scope.response = question.getComments($scope.currentPage);
-//                $scope.totalItems = $scope.response.total;
-            }
-
         });

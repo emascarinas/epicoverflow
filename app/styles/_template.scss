@@ -35,6 +35,15 @@
         }
     }
 }
+.bz-profile {
+    .panel-primary {
+        width: 100px;
+        margin: 0 auto;
+    }
+    .bz-profile-image {
+        text-align: center;
+    }
+}
 #bz-answer{
     h2 {
         margin-bottom: 20px;
@@ -50,9 +59,6 @@
 
 div.tab-pane {
     margin-top: 20px;
-}
-.bz-profile-image {
-    text-align: center;
 }
 .bz-success {
     background-color: #5cb85c!important;

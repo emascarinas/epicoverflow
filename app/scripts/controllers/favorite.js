@@ -3,6 +3,7 @@ angular.module('epicoverflowApp')
         .controller('FavoriteCtrl', function($scope, user, config, util, $timeout) {
             $scope.currentPage = 1;
             $scope.maxSize = config.pageMaxSize;
+            $scope.itemsPerPage = config.itemsPerPage;
             $scope.boundaryLinks = true;
             $scope.rotate = false;
             
