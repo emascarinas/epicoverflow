@@ -37,7 +37,8 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
 					<form class="navbar-form navbar-right" ng-submit="goSearch()">
-						<input type="text" name="tag" ng-model="tag" required class="form-control" placeholder="Search Question...">
+						<input type="text" name="tag" ng-model="tag" required class="form-control">
+						<button type="submit" class="btn btn-success">Search</button>
 					</form>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a ng-click="goHome()" href="">Home</a></li>

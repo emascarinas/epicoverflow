@@ -112,6 +112,16 @@ a {
         border: none;
     }  
 }
+#navbar {
+		form {
+			border-top: none;
+			button.btn-success {
+			margin-top: 10px;	
+			}
+		}
+}
+
+
 .bz-comment {
     .bz-row {
         margin-left: 30px;
