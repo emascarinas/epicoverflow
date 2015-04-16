@@ -125,7 +125,7 @@ a {
 .bz-comment {
     .bz-row {
         margin-left: 30px;
-        border-bottom: 1px solid #{$border-dark};
+        border-top: 1px solid #{$border-dark};
         padding: 7px 0;
         > .col-md-1 {
             text-align: center;
