@@ -43,4 +43,7 @@ angular.module('epicoverflowApp')
             this.isAuth = function() {
                 return undefined !== session.getAccessToken();
             };
+            this.redirect = function(url){
+                window.location.replace(url);
+            };
         });

@@ -29,8 +29,8 @@ angular.module('epicoverflowApp')
             }
             else {
                 if (undefined === session.getProfile() && null === code) {
-                    var url = config.oathUrl + '?scope=' + config.scope + '&client_id=' + config.clientId + '&redirect_uri=' + config.redirectUri;
-                    window.location.replace(url);
+                    var url = config.oathUrl + '?scope=' + config.scope + '&client_id=' + config.clientId + '&redirect_uri=' + config.redirectUri + config.uriBase;
+                    util.redirect(url);
                 }
                 if (null !== code) {
                     session.setCode(code[1]);
