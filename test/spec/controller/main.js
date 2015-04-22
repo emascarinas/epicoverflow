@@ -18,7 +18,7 @@ describe('Controller: Main', function () {
         spyOn(util, 'redirect');
         controller();
         $httpBackend.flush();
-        expect(util.redirect).toHaveBeenCalledWith('https://stackexchange.com/oauth?scope=read_inbox,write_access,private_info&client_id=4593&redirect_uri=http://dunggoanan.com/emem/undefined');        
+        expect(util.redirect).toHaveBeenCalledWith('https://stackexchange.com/oauth?scope=read_inbox,write_access,private_info&client_id=4593&redirect_uri=http://dunggoanan.com/emem/');        
     }));
     it('should fetch by id successfully', inject(function ($routeParams, getProfile, session) {
         $routeParams.id = 123;
