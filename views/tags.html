@@ -1,0 +1,1 @@
+<span ng-hide="response.items.length">0 Tags</span> <div class="bz-table" ng-show="response.items.length"> <div class="row"> <a ng-repeat="tag in response.items" ng-href="#/questions?tag={{tag.name}}" class="btn btn-success" type="button"> {{tag.name}} <span class="badge">{{tag.count}}</span> </a> </div> <bz-paginator></bz-paginator> </div>
