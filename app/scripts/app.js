@@ -8,12 +8,12 @@ angular
             'angular-loading-bar'
         ])
         .constant('config', {
-            clientId: '4593',
-            clientSecret: 'DivVyyyF1QH5k5p2jswIlw((',
-            key: 'Vra)L3fu19Zuq8IW7XyUMw((',
-            scope: 'read_inbox,write_access,private_info',
-            redirectUri: 'http://dunggoanan.com/',
-            uriBase: 'emem/',
+            clientId: '4669',
+            clientSecret: 'xSxTseAuN7MJjpmoz8FgrQ((',
+            key: 'kbHcPnT0zVHBHC0rFcfyFg((',
+            scope: 'write_access,private_info',
+            redirectUri: 'http://emascarinas.github.io/',
+            uriBase: 'epicoverflow/',
             //redirectUri: 'http://localhost:9000/',
             //redirectUri: 'http://dunggoanan.com:9000/',
             oathUrl: 'https://stackexchange.com/oauth',
