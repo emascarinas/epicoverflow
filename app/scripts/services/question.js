@@ -5,15 +5,9 @@ angular.module('epicoverflowApp')
                 getQuestions: function (page, sort, order, tag) {
                     var qstr = {};
                     qstr.page = page;
-                    if (undefined !== tag) {
-                        qstr.tagged = tag;
-                    }
-                    if ('' !== sort) {
-                        qstr.sort = sort;
-                    }
-                    if ('' !== order) {
-                        qstr.order = order;
-                    }
+                    qstr.tagged = undefined !== tag ? tag : undefined; 
+                    qstr.sort = '' !== sort ? sort : undefined; 
+                    qstr.order = '' !== order ? order : undefined; 
                     var param = util.getParam(config.questionBase, '?', qstr);
                     return $http.get(param);
                 },

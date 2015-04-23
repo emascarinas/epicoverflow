@@ -9,14 +9,9 @@ angular.module('epicoverflowApp')
                     util.showError(data);
                 });
             }
-            $scope.currentPage = 1;
             $scope.currentOrder = '';
             $scope.currentSort = '';
             $scope.tagged = undefined === $routeParams.tag ? '' : $routeParams.tag;
-            $scope.maxSize = config.pageMaxSize;
-            $scope.itemsPerPage = config.itemsPerPage;
-            $scope.boundaryLinks = true;
-            $scope.rotate = false;
             
             $scope.orderList = [{display:'Default',value:''},{display:'Desc',value:'desc'},{display:'Asc',value:'asc'}];
             $scope.sortList = [{display:'Default',value:''},

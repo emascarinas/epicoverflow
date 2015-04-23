@@ -12,9 +12,10 @@ angular.module('epicoverflowApp')
                 });
             }
 
-            $scope.currentPage = 1;
-            $scope.maxSize = config.pageMaxSize;
             $scope.itemsPerPage = config.itemsSmallPerPage;
+            $scope.boundaryLinks = false;
+            $scope.rotate = true;
+            
             $scope.pageChanged = function () {
                 fetch();
             };

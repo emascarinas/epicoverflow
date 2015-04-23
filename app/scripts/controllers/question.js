@@ -11,10 +11,6 @@ angular.module('epicoverflowApp')
                 });
             }
 
-            $scope.currentPage = 1;
-            $scope.maxSize = config.pageMaxSize;
-            $scope.itemsPerPage = config.itemsSmallPerPage;
-
             question.getQuestion().success(function(data) {
                 $scope.questionResponse = data.items[0];
                 $scope.flag = function(fav) {

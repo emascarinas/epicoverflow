@@ -5,7 +5,7 @@ angular.module('epicoverflowApp')
             return {
                 getCodePost: function() {
                     var url = config.oathPostUrl;
-                    var param = 'client_id=' + config.clientId + '&client_secret=' + config.clientSecret + '&code=' + session.getCode() + '&redirect_uri=' + config.redirectUri;
+                    var param = 'client_id=' + config.clientId + '&client_secret=' + config.clientSecret + '&code=' + session.getCode() + '&redirect_uri=' + config.redirectUri + config.uriBase;
                     return $http.post(config.curlUrl, {url: url, param: param});
                 },
                 getProfile: function(id) {
