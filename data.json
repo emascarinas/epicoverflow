@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "date": {
+        "month": "NOV",
+        "day": "12",
+        "year": "2014"
+      },
+      "type": {
+        "name": "Mobile reCell",
+        "value": "25 Devices"
+      },
+      "status": {
+        "name": "pending",
+        "value": "quote"
+      }
+    },
+    {
+      "date": {
+        "month": "DEC",
+        "day": "20",
+        "year": "2018"
+      },
+      "type": {
+        "name": "ABC Company",
+        "value": "5 Devices"
+      },
+      "status": {
+        "name": "pending",
+        "value": "approval"
+      }
+    },
+    {
+      "date": {
+        "month": "JAN",
+        "day": "15",
+        "year": "2017"
+      },
+      "type": {
+        "name": "Company",
+        "value": "500 Devices"
+      },
+      "status": {
+        "name": "pending",
+        "value": "quote"
+      }
+    },
+    {
+      "date": {
+        "month": "JUL",
+        "day": "23",
+        "year": "2019"
+      },
+      "type": {
+        "name": "Company Y",
+        "value": "30 Devices"
+      },
+      "status": {
+        "name": "pending",
+        "value": "approval"
+      }
+    }
+  ]
+}
